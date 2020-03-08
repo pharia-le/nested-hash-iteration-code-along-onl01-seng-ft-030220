@@ -15,5 +15,11 @@ require 'pry'
   # }
   
 def remove_strawberry(contacts)
+  flavors = contacts["Freddy Mercury"][:favorite_ice_cream_flavors].each_with_index do |flavor, idx|
+    if flavor == "strawberry"
+      contacts["Freddy Mercury"][:favorite_ice_cream_flavors].delete_at(idx)
+    end
+  end
 
+  contacts["Freddy Mercury"][:favorite_ice_cream_flavors] = flavors
 end
